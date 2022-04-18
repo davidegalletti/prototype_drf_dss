@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from prova import views
-from django.conf.urls import url
+from django.urls import include, re_path
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -30,5 +30,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^province2/(?P<id>[0-9a-f-]+)/$', view=views.Provincia2DetailView.as_view(), name='province2'),
+    re_path(r'^province2/(?P<id>[0-9a-f-]+)/$', view=views.Provincia2DetailView.as_view(), name='province2'),
 ]

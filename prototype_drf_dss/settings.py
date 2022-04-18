@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prova',
     'rest_framework',
-    'serialization_spec',
+    'django_readers',
 ]
 
 MIDDLEWARE = [
